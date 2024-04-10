@@ -1,0 +1,16 @@
+{% extends 'news/layout.html' %}
+{% load static %}
+{% block content %}
+{% if tag %}<h1>News by tag: {{tag.text}}</h1>{% endif %}
+{% for news in object_list %}
+<article>
+    <img src='{{news.image.url}}'>
+    <h2><a href="{{ news.get_absolute_url }}">{{news.title}}</a></h2>
+    <h3>Просмотры: {{ news.views }}</h3><h3>Лайки: {{ news.get_likes_count }}</h3><h3>Дизлайки: {{ news.get_dislikes_count }}</h3>
+    <ul>{% for tag in news.tags.all %}<li><a href="{{tag.get_absolute_url}}">{{tag.text}}</a></li>{% endfor %}</ul>
+</article>
+{% endfor %}
+{% endblock %}
+{% block script %}
+<script>max = {{ max }};</script>
+<script src="{% static 'main.js' %}" async></script>{% endblock %}

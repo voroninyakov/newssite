@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "style.css" %}" rel="stylesheet">
+        <title>News</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <ul>
+                    <li><a href="{% url 'news:main' %}">Новости</a></li>
+                    <li><a href="{% url 'news:statistic' %}">Статистика</a></li>
+                </ul>
+            </div>
+        </header>
+        <main id='main'>
+            {% block content %}{% endblock %}
+        </main>
+        <script>csrftoken = "{{ csrf_token }}";</script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        {% block script %}{% endblock %}
+    </body>
+</html>

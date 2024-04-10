@@ -1,0 +1,54 @@
+body {
+    margin: 0 !important;
+}
+header {
+    height: 100px;
+    background-color: blueviolet;
+    color: white;
+}
+header div {
+    padding-top: 30px;
+}
+header a {
+    color: white;
+}
+main a {
+    color: blueviolet;
+}
+ul {
+    margin-block: 0;
+    list-style: none;
+    width: 50%;
+    margin: auto;
+    font-size: 0;
+}
+li {
+    display: inline-block;
+    font-size: 30px;
+    width: 50%;
+    vertical-align: baseline;
+    text-align: center;
+}
+article {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+article img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+.stat-item {
+    display: flex;
+    width: 50%;
+    margin: auto;
+}
+.stat-item h3{
+    flex: 1;
+}
+h1 {
+    width: 50%;
+    margin: auto;
+}
