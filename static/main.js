@@ -10,11 +10,9 @@ $(document).ready(function () {
                 success: function (data) {
                     max = data['max'];
                     page += 1;
-                    console.log(max, page, 'send');
                     if (data["page"]==page) {
                         for (let news in data["news"]) {
                             news = data['news'][news];
-
                             document.getElementById('main').innerHTML += news;
                         }
                     }
